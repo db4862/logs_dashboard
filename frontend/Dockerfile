@@ -14,6 +14,9 @@ COPY . .
 # Expose port
 EXPOSE 3000
 
+# Set environment variable for API URL
+ENV NEXT_PUBLIC_API_URL=http://localhost:8000
+
 # Development command
 CMD ["npm", "run", "dev"]
 
