@@ -8,7 +8,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 # Copy dependency files
 COPY pyproject.toml .
 
-# Install dependencies
+# Install dependencies and create virtual environment
 RUN uv sync --no-dev
 
 # Copy application code
@@ -17,6 +17,5 @@ COPY . .
 # Expose port
 EXPOSE 8000
 
-# Run the application
+# Run using uv which knows about the virtual environment
 CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
