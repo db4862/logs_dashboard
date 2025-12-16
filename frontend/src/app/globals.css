@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #141414;
+  --card-hover: #1a1a1a;
+  --border: #2a2a2a;
+  --muted: #666666;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  
+  /* Severity colors */
+  --severity-debug: #6b7280;
+  --severity-info: #3b82f6;
+  --severity-warning: #f59e0b;
+  --severity-error: #ef4444;
+  --severity-critical: #dc2626;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Severity badge styles */
+.severity-badge {
+  @apply px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.severity-DEBUG {
+  background: color-mix(in srgb, var(--severity-debug) 20%, transparent);
+  color: var(--severity-debug);
+}
+
+.severity-INFO {
+  background: color-mix(in srgb, var(--severity-info) 20%, transparent);
+  color: var(--severity-info);
+}
+
+.severity-WARNING {
+  background: color-mix(in srgb, var(--severity-warning) 20%, transparent);
+  color: var(--severity-warning);
+}
+
+.severity-ERROR {
+  background: color-mix(in srgb, var(--severity-error) 20%, transparent);
+  color: var(--severity-error);
+}
+
+.severity-CRITICAL {
+  background: color-mix(in srgb, var(--severity-critical) 20%, transparent);
+  color: var(--severity-critical);
+}
+
+/* Card component */
+.card {
+  @apply bg-[var(--card)] border border-[var(--border)] rounded-lg p-4;
+}
+
+.card-hover {
+  @apply hover:bg-[var(--card-hover)] transition-colors cursor-pointer;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white;
+}
+
+.btn-secondary {
+  @apply bg-[var(--card)] hover:bg-[var(--card-hover)] border border-[var(--border)];
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white;
+}
+
+/* Form inputs */
+.input {
+  @apply w-full px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg;
+  @apply focus:outline-none focus:border-[var(--accent)] transition-colors;
+}
+
+.select {
+  @apply w-full px-3 py-2 bg-[var(--card)] border border-[var(--border)] rounded-lg;
+  @apply focus:outline-none focus:border-[var(--accent)] transition-colors;
+}
+
+/* Table styles */
+.table {
+  @apply w-full;
+}
+
+.table th {
+  @apply text-left p-3 text-[var(--muted)] font-medium text-sm border-b border-[var(--border)];
+}
+
+.table td {
+  @apply p-3 border-b border-[var(--border)];
+}
+
+.table tr:hover td {
+  @apply bg-[var(--card-hover)];
+}
+
