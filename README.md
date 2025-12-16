@@ -90,7 +90,7 @@ logs_dashboard/
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/db4862/logs_dashboard.git
 cd logs_dashboard
 
 # Start all services
@@ -273,7 +273,7 @@ This project was developed with assistance from generative AI (Claude).
 
 ```bash
 # リポジトリのクローン
-git clone <repository-url>
+git clone https://github.com/db4862/logs_dashboard.git
 cd logs_dashboard
 
 # 全サービスを起動
